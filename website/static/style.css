@@ -1,24 +1,12 @@
-article {
-    display: grid;
-    /* I'm using 440px instead of 740px as it makes it easier to view it in the Scrimba simulator additive-symbols: */
-    grid-template-columns: 1fr 1fr 10px 440px 10px 1fr 1fr;
-}
-
-article > * {
-    grid-column: 4;
+.pane {
+  padding: 50px;
 }
 
 article > figure {
-    grid-column: 1 / -1;
     margin: 20px 0;
 }
 
-article > .aside {
-    grid-column: 5 / -1;
-}
-
 article > blockquote {
-    grid-column: 3 / span 2;
     margin: 0px 0;
     color: #666;
     border-left: 3px solid black;
@@ -38,13 +26,14 @@ article > * {
 }
 
 article > h1 {
-    font-family: Lucida Grande;
+    font-family: Helvetica;
+    font-weight: 600;
 }
 
 article > p {
     --x-height-multiplier: 0.375;
     --baseline-multiplier: 0.17;
-    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    font-family: Georgia,"Times New Roman",Times,serif;
     letter-spacing: .01rem;
     font-weight: 400;
     font-style: normal;
@@ -57,7 +46,7 @@ article > p {
 }
 
 article > .aside {
-    font-family: Lucida Grande;
+    font-family: Helvetica;
     margin: 30px 20px;
     color: #666;
     font-size: 0.8em;
@@ -65,6 +54,7 @@ article > .aside {
 
 img {
     width: 100%;
+    border-radius: 4px;
 }
 
 .line-numbers a {

@@ -4,15 +4,23 @@
   <title>newstrality</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
   <style>
 
   .btn {
     background: #7F007F;
-    border: 3px solid #4c004c;
-    border-radius: 0;
-    color: white;
+    border: #4c004c;
   }
 
+  .btn:hover {
+    background: #660066;
+  }
+
+  .btn:active, .btn:focus, .btn:active:focus {
+    background: #7F007F;
+  }
+/*
   #url {
     border: solid 3px #7F007F;
     transition: border 0.3s;
@@ -35,8 +43,14 @@
 
   textarea:focus, input:focus{
     outline: none;
-  }
+  } */
   </style>
+  <script>
+function searchButtonShow(){
+$("#search").slideDown();
+}
+
+</script>
 </head>
 <body style="font-family: Helvetica, sans-serif;">
   <div style="height: 100vh;
@@ -49,16 +63,17 @@
     <h1 style="margin-bottom: 100px; font-size: 350%; letter-spacing: 0.08em;"><b>NEWSTRALITY</b></h1>
 
 
-    <form method="post" action="" style="width: 100%; margin-bottom: 30px;">
+    <form method="post" action="" style="width: 60%; margin: 0 auto;">
       {{ form.csrf }} <!-- csrf -->
       <div class="row">
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-12" style="margin-bottom: 1em">
 
-          {{ form.url() }}
+          {{ form.url(class="form-control form-control-lg", onclick="searchButtonShow()", placeholder="Enter article URL to calculate newstrality...") }}
 
         </div>
-        <div class="col-xs-12 col-sm-3">
-          <button type="submit" class="btn btn-lg btn-block">Submit</button>
+
+        <div class="col-xs-12 col-sm-12" id="search" style="display: none;">
+          <button type="submit" class="btn btn-lg btn-block btn-secondary">Submit</button>
         </div>
       </div>
     </form>
