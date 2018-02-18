@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <title>newstrality</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+  <style>
+
+  .btn {
+    background: #7F007F;
+    border: 3px solid #4c004c;
+    border-radius: 0;
+    color: white;
+  }
+
+  #url {
+    border: solid 3px #7F007F;
+    transition: border 0.3s;
+    background: none;
+    color: white;
+    font-size: 150%;
+    font-weight: 400;
+    height: auto;
+    width: 100%;
+    border: none;
+    border-bottom: solid 3px #ffffff;
+  }
+
+  #url:focus {
+    border: solid 3px #7F007F;
+    border: none;
+    border-bottom: solid 3px #7F007F;
+    box-shadow: none;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+  }
+  </style>
+</head>
+<body style="font-family: Helvetica, sans-serif;">
+  <div style="height: 100vh;
+  text-align: center;
+  background: linear-gradient(rgba(0,0, 0,0.5), rgba(0,0, 0,0.5)), url('https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1495020689067-958852a7765e%3Fixlib%3Drb-0.3.5%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26s%3D086b266028f315a46c1ee1f0ee03ea01');
+  background-size: cover;
+  background-position: center;
+  display: flex; flex-direction: column; justify-content: center;  color: white; font-size: 150%  ">
+  <div class="container">
+    <h1 style="margin-bottom: 100px; font-size: 350%; letter-spacing: 0.08em;"><b>NEWSTRALITY</b></h1>
+
+
+    <form method="post" action="" style="width: 100%; margin-bottom: 30px;">
+      {{ form.csrf }} <!-- csrf -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
+
+          {{ form.url() }}
+
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <button type="submit" class="btn btn-lg btn-block">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+</div>
+<div class="container" style="margin-bottom: 60px; margin-top: 60px">
+  <h1>How Newstrality Works</h1>
+  <p>Newstrality uses cutting-edge artificial intelligence to detect the politicial leanings of news articles and make readers aware of bias.</p>
+</div>
+</body>
+</html>

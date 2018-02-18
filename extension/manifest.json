@@ -1,19 +1,23 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "name": "Newstrality",
   "version": "0.1",
   "description": "Using cutting-edge artificial intelligence to detect the politicial leanings of news articles. Read smart.",
   "icons": {
     "48": "icons/logo.svg"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "*"
-      ],
-      "js": [
-        "process.js"
-      ]
+  "applications": {
+    "gecko": {
+      "id": "libre@rmrm.io"
     }
+  },
+  "browser_action": {
+    "default_icon": "icons/logo.svg",
+    "default_title": "Newstrality",
+    "default_popup": "popup/default.html"
+  },
+  "permissions": [
+    "https://api.newstrality.org",
+    "webRequest"
   ]
 }
