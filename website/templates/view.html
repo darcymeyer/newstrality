@@ -134,27 +134,24 @@ function load(data) {
 
   var quantized_analysis = 1/(1+Math.E**(-1*analysis/20));
   // quantized_analysis = 0.33333;
-  console.log("quantized_analysis", quantized_analysis);
-  quantized_analysis = Math.floor(quantized_analysis*5+0.5)/5+0.1;
-  console.log("quantized_analysis", quantized_analysis);
-  var analysis_html = "<small>degree of analysis</small><br><strong>asdfasdf</strong>";
-  switch (quantized_analysis) {
-    case .1:
-      analysis_html = "<small>contains</small><br><strong>little opinion</strong>";
-      break;
-    case .3:
-      console.log("sanity check");
-      analysis_html = "<small>contains</small><br><strong>minor opinion</strong>";
-      break;
-    case .5:
-      analysis_html = "<small>contains</small><br><strong>some opinion</strong>";
-      break;
-    case .7:
-      analysis_html = "<small>contains</small><br><strong>considerable opinion</strong>";
-      break;
-    case 1:
-      analysis_html = "<small>contains</small><br><strong>mostly opinion</strong>";
-      break;
+  // console.log("quantized_analysis", quantized_analysis);
+  // quantized_analysis = Math.floor(quantized_analysis*5+0.5)/5+0.1;
+  // console.log("quantized_analysis", quantized_analysis);
+  var analysis_html = "<small>degree of analysis</small><br><strong>unknown</strong>";
+  if(quantized_analysis <= 0.1) {
+    analysis_html = "<small>contains</small><br><strong>little opinion</strong>";
+  }
+  else if(quantized_analysis <= 0.3) {
+    analysis_html = "<small>contains</small><br><strong>minor opinion</strong>";
+  }
+  else if(quantized_analysis <= 0.5) {
+    analysis_html = "<small>contains</small><br><strong>some opinion</strong>";
+  }
+  else if(quantized_analysis <= 0.7) {
+    analysis_html = "<small>contains</small><br><strong>considerable opinion</strong>";
+  }
+  else {
+    analysis_html = "<small>contains</small><br><strong>mostly opinion</strong>";
   }
 
   $("#analysis h5").html(analysis_html)
