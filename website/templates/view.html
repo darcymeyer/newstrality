@@ -76,8 +76,10 @@ crossorigin="anonymous"></script>
 <script>
 function load(data) {
   var article_data = data[0];
+
   var ideology = article_data["ideology"];
   var analysis = article_data["analysis"];
+  console.log(ideology, analysis)
   var quantized_ideology = Math.round((ideology + 1) * 5) + 1;
   var color = "#00ff00";
   var html_content = "<strong>error...</strong><br><small>something weird happened</small>"
@@ -130,22 +132,27 @@ function load(data) {
     "color": color
   });
 
-  var quantized_analysis = Math.round(analysis * 4);
-  var analysis_html = "<small>degree of analysis</small><br><strong>unknown</strong>";
+  var quantized_analysis = 1/(1+Math.E**(-1*analysis/20));
+  // quantized_analysis = 0.33333;
+  console.log("quantized_analysis", quantized_analysis);
+  quantized_analysis = Math.floor(quantized_analysis*5+0.5)/5+0.1;
+  console.log("quantized_analysis", quantized_analysis);
+  var analysis_html = "<small>degree of analysis</small><br><strong>asdfasdf</strong>";
   switch (quantized_analysis) {
-    case 0:
+    case .1:
       analysis_html = "<small>contains</small><br><strong>little opinion</strong>";
       break;
-    case 1:
+    case .3:
+      console.log("sanity check");
       analysis_html = "<small>contains</small><br><strong>minor opinion</strong>";
       break;
-    case 2:
+    case .5:
       analysis_html = "<small>contains</small><br><strong>some opinion</strong>";
       break;
-    case 3:
+    case .7:
       analysis_html = "<small>contains</small><br><strong>considerable opinion</strong>";
       break;
-    case 4:
+    case 1:
       analysis_html = "<small>contains</small><br><strong>mostly opinion</strong>";
       break;
   }
@@ -155,7 +162,7 @@ function load(data) {
   var topics_html = "";
 
   for (topic in article_data["topics"]) {
-    var name = article_data["topics"][topic];
+    var name = article_data["topics"][topic]['text'];
     var sentiment = Math.random() * 2 - 1;
     if (sentiment < 0) {
       topics_html += "<h6 class=\"text-danger\">&#9660; " + name + "</h6>"

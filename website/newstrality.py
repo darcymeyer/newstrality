@@ -31,8 +31,9 @@ def hello():
 
 @app.route('/view/<path:url>')
 def view(url):
-    # sentiment_data = requests.post("https://api.newstrality.com/", data={"url": url})
-    sentiment_data = json.loads("[{\"entities\": [\"one\", \"two\"], \"ideology\": -1, \"analysis\": 0, \"topics\": [\"one\", \"two\"]}, {\"entities\": [\"cat\", \"dog\"], \"ideology\": 0.5, \"analysis\": 0.2, \"topics\": [\"three\", \"four\"]}]")
+    sentiment_data = requests.post("https://api.newstrality.com/", data={"url": url})
+    # print(sentiment_data.json())
+    # sentiment_data = json.loads("[{\"entities\": [\"one\", \"two\"], \"ideology\": -1, \"analysis\": 0, \"topics\": [\"one\", \"two\"]}, {\"entities\": [\"cat\", \"dog\"], \"ideology\": 0.5, \"analysis\": 0.2, \"topics\": [\"three\", \"four\"]}]")
     title = ""
     authors = ""
     publish_date = ""
@@ -60,7 +61,7 @@ def view(url):
         authors = "error"
         publish_date = "error"
         top_image = "error"
-    return render_template('view.html', title = title, authors = authors, publish_date=publish_date, text=text, top_image=top_image, sentiment_data=sentiment_data[0])
+    return render_template('view.html', title = title, authors = authors, publish_date=publish_date, text=text, top_image=top_image, sentiment_data=sentiment_data.json())
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

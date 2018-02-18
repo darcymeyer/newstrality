@@ -61,8 +61,8 @@ $("#search").slideDown();
   display: flex; flex-direction: column; justify-content: center;  color: white; font-size: 150%  ">
   <div class="container">
     <h1 style=" font-size: 350%; letter-spacing: 0.08em;"><b>NEWSTRALITY</b></h1>
-    <p style="margin-bottom: 50px;">Newstrality uses cutting-edge artificial intelligence to detect the politicial leanings of news articles and make readers aware of bias.</p>
-    <img src="https://files.slack.com/files-pri/T20SZKFEE-F9B41BNS1/carbon_1_.png">
+    <p style="">Newstrality uses cutting-edge artificial intelligence to detect the politicial leanings of news articles and make readers aware of bias.</p>
+    <img src="{{ url_for('static',filename='code.png') }}" style="madgin: 0;">
 
     <form method="post" action="" style="width: 60%; margin: 0 auto;">
       {{ form.csrf }} <!-- csrf -->
