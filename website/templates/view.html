@@ -158,9 +158,9 @@ function load(data) {
 
   var topics_html = "";
 
-  for (topic in article_data["topics"]) {
-    var name = article_data["topics"][topic]['text'];
-    var sentiment = Math.random() * 2 - 1;
+  for (topic in article_data["entities"]) {
+    var name = article_data["entities"][topic]['text'];
+    var sentiment = article_data["entities"][topic]['sentiment']['score'];
     if (sentiment < 0) {
       topics_html += "<h6 class=\"text-danger\">&#9660; " + name + "</h6>"
     } else {
