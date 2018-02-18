@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 1,
+  "name": "Newstrality",
+  "version": "0.1",
+
+  "description": "Using cutting-edge artificial intelligence to detect the politicial leanings of news articles. Read smart.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*"],
+      "js": ["borderify.js"]
+    }
+  ]
+
+}
