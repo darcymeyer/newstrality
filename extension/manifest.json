@@ -17,7 +17,8 @@
     "default_popup": "popup/default.html"
   },
   "permissions": [
-    "https://api.newstrality.org",
-    "webRequest"
+    "webRequest",
+    "tabs",
+    "<all_urls>"
   ]
 }
