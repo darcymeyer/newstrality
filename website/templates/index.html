@@ -60,8 +60,9 @@ $("#search").slideDown();
   background-position: center;
   display: flex; flex-direction: column; justify-content: center;  color: white; font-size: 150%  ">
   <div class="container">
-    <h1 style="margin-bottom: 100px; font-size: 350%; letter-spacing: 0.08em;"><b>NEWSTRALITY</b></h1>
-
+    <h1 style=" font-size: 350%; letter-spacing: 0.08em;"><b>NEWSTRALITY</b></h1>
+    <p style="">Newstrality uses cutting-edge artificial intelligence to detect the politicial leanings of news articles and make readers aware of bias.</p>
+    <img src="{{ url_for('static',filename='code.png') }}" style="margin-bottom: 30px; width: 50%">
 
     <form method="post" action="" style="width: 60%; margin: 0 auto;">
       {{ form.csrf }} <!-- csrf -->
@@ -81,9 +82,9 @@ $("#search").slideDown();
 
 
 </div>
-<div class="container" style="margin-bottom: 60px; margin-top: 60px">
+<!-- <div class="container" style="margin-bottom: 60px; margin-top: 60px">
   <h1>How Newstrality Works</h1>
   <p>Newstrality uses cutting-edge artificial intelligence to detect the politicial leanings of news articles and make readers aware of bias.</p>
-</div>
+</div> -->
 </body>
 </html>
