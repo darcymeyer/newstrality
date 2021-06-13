@@ -18,7 +18,7 @@ newspaper3k==0.2.6
 nltk==3.2.5
 Pillow==8.2.0
 python-dateutil==2.6.1
-PyYAML==3.12
+PyYAML==5.4
 readability==0.2
 readability-lxml==0.6.2
 requests==2.18.4
